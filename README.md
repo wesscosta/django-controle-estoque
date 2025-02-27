@@ -13,13 +13,13 @@ Descrição: Processo para criação de um projeto de controle de estoque conten
 > cd nome_da_pasta
 
 03. Criar o ambiente virtual
-> python -m venv nome_ambiente_virtual
+> python -m venv venv
 
 04. Acessar o ambiente virtual
 - windows: 
-> nome_ambiente_virtual\Scripts\activate
+> venv\Scripts\activate
 - linux ou mac:
-> source nome_ambiente_virtual/bin/activate 
+> source venv/bin/activate 
 
 05. Instalar os pacotes (django,...)
 - Instalando um pacote especifico
