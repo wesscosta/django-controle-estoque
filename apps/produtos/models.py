@@ -1,27 +1,19 @@
 from django.db import models
+from fornecedores.models import Fornecedor
+from categorias.models import Categoria
 
-class Categoria(models.Model):
-    nome = models.CharField(verbose_name='Categoria do Produto', blank=False, null=False, max_length=200)
+class Produto(models.Model):
+    nome = models.CharField(verbose_name='nome do produto', max_length=50, blank=False, null=False )
+    descricao=models.CharField(verbose_name='Descrição do Produto', max_length=200)
+    preco = models.DecimalField(verbose_name='Preço',  max_digits=10, decimal_places=2, blank=False, null=False)
+    quantidadeEstoque=models.PositiveIntegerField(verbose_name='Quantidade em Estoque', default=0 ) 
+    categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT )
+    fornecedor= models.ForeignKey(Fornecedor, on_delete=models.PROTECT )
     
     class Meta:
-        verbose_name = 'Categoria'
-        verbose_name_plural = 'Categorias'
-        db_table  = 'categoria'
+        verbose_name= 'Produto'
+        verbose_name_plural = 'Produtos'
+        db_table = 'produto'
     
     def __str__(self):
         return self.nome
-    
-    
-class Fornecedor(models.Model):
-    nome = models.CharField(verbose_name='Nome Fantasia', max_length=150, blank=False, null=False)
-    contato =models.CharField(verbose_name='contato do fornecedor', max_length=15, blank=False, null=False)
-    cnpj = models.CharField(verbose_name='cnpj', max_length=14, blank=False, null=False, unique=True)
-
-    class Meta:
-        verbose_name='Fornecedor'
-        verbose_name_plural='Fornecedores'
-        db_table='fornecedor'
-        ordering = ['id']
-
-    def __str__(self):
-        return (f' {self.nome} - {self.cnpj}')
