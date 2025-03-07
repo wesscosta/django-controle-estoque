@@ -29,9 +29,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-sys.path.append(
-    os.path.join(BASE_DIR, 'apps')
-)
+# sys.path.append(
+#     os.path.join(BASE_DIR, 'apps')
+# )
 
 # Application definition
 
@@ -65,7 +65,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
