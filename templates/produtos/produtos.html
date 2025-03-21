@@ -43,7 +43,7 @@
                 <div class="btn-group">
                   <a href="#" type="button" class="btn btn-sm btn-outline-secondary"><i class="bi bi-eye-fill"></i></a>
                   <a href="{% url 'produto-update' produto.pk %}" type="button" class="btn btn-sm btn-outline-secondary"><i class="bi bi-pencil-square"></i></a>
-                  <a href="#" type="button" class="btn btn-sm btn-outline-secondary"><i class="bi bi-trash-fill"></i></a>
+                  <a href="{% url 'produto-delete' produto.pk %}" type="button" class="btn btn-sm btn-outline-secondary"><i class="bi bi-trash-fill"></i></a>
                 </div>
                 <small class="text-body-secondary"><i class="bi bi-box-seam-fill"></i> {{produto.quantidadeEstoque}}</small>
                 <small class="text-body-secondary"><i class="bi bi-cash-coin"></i> {{produto.preco}}</small>
