@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView
 from produtos.models import Produto
 
 class ProdutoListView(ListView):
@@ -11,6 +11,12 @@ class ProdutoListView(ListView):
     
 class ProdutoCreateView(CreateView):
     model = Produto
-    fields = ['nome', 'descricao', 'preco', 'quantidadeEstoque','categoria','fornecedor']
+    fields = ['nome','marca', 'descricao', 'preco', 'quantidadeEstoque','categoria','fornecedor','imagem','usuario']
+    template_name = 'produtos/produto_create_update.html'
+    success_url = reverse_lazy('produtos-lista')
+
+class ProdutoUpdateView(UpdateView):
+    model = Produto
+    fields = ['nome','marca', 'descricao', 'preco', 'quantidadeEstoque','categoria','fornecedor','imagem', 'usuario']
     template_name = 'produtos/produto_create_update.html'
     success_url = reverse_lazy('produtos-lista')
