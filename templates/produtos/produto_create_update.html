@@ -9,8 +9,8 @@
     <div class="card-body">
       <h4> Formulario para registro de novos Produtos</h4>
 
-      <form action="" method="post">
-        {% csrf_token %}       <!-- {{ form.as_p }} -->
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}     
 
         {% for  field in form %}
           <label> {{field.label}} {% if field.field.required %} * {%endif%}</label>
