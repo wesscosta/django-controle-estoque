@@ -7,7 +7,7 @@
   <section class="py-5 text-center container banner-section">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
-        <h1 class="fw-light text-banner">Album example</h1>
+        <!-- <h1 class="fw-light text-banner">Album example</h1> -->
         <!-- <p class="lead text-body-secondary">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p> -->
       </div>
     </div>
@@ -22,26 +22,31 @@
           <ul class="nav nav-tabs" id="servicesTabs" role="tablist">
 
             <li class="nav-item" role="presentation">
-              <button class="nav-link" data-bs-toggle="tab" data-bs-target="#section-produtos" type="button" role="tab">Produtos</button>
+              <button class="nav-link active" data-bs-target="#section-produtos" data-bs-toggle="tab" type="button" role="tab">Produtos</button>
             </li>
 
             <li class="nav-item" role="presentation">
-              <button class="nav-link" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#section-categorias">Categorias</button>
+              <button class="nav-link" data-bs-target="#section-categorias" data-bs-toggle="tab" type="button" role="tab">Categorias</button>
             </li>
 
             <li class="nav-item" role="presentation">
-              <button class="nav-link" data-bs-toggle="tab" type="button" role="tab" data-bs-target="#section-fornecedores">Fornecedor</button>
+              <button class="nav-link" data-bs-target="#section-fornecedores" data-bs-toggle="tab" type="button" role="tab">Fornecedor</button>
             </li>
           </ul>
 
         </div>
-      <div class="tab-contant mt-3">
-      
 
-          {% include 'produtos/tab_produtos.html'%}
-
-
-    </div>
+        <div class="tab-contant mt-3">
+          <div class="tab-pane fade show active" id="section-produtos" role="tabpanel">
+            {% include 'produtos/tab_produtos.html'%}
+          </div>
+          <div class="tab-pane fade" id="section-categorias" role="tabpanel">
+              Conteúdo de Categorias
+          </div>
+          <div class="tab-pane fade" id="section-fornecedores" role="tabpanel">
+            {% include 'produtos/tab_fornecedores.html'%}
+          </div>
+      </div>
   </div>
 </div>
 
