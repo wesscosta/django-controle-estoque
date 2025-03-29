@@ -1,3 +1,4 @@
+
 alinhamento-right{
     display: flex;
     justify-content: end;
@@ -5,7 +6,15 @@ alinhamento-right{
 
 .banner-section {
   background: url('/media/banner.webp') no-repeat center/cover;
+  object-fit: cover;
   color: white;
+  height: 300px;
+}
+
+.text-banner{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #fff;
+  font-weight: 900;
 }
 
 .bd-placeholder-img {
